@@ -6,7 +6,6 @@
         <Position x="0" y="0" width="59" height="59" />
       </GuiSettings>
       <Properties>
-        <Configuration />
         <Annotation DisplayMode="0">
           <Name />
           <DefaultAnnotationText />
@@ -16,7 +15,7 @@
     </Node>
     <Node ToolID="8">
       <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
-        <Position x="270" y="54" />
+        <Position x="258" y="186" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -27,7 +26,7 @@
           </Fields>
           <Data>
             <r>
-              <c>https://github.com/Kesavan-Jayakrishnan/alteryx-spike/raw/master/Financial_Sample.xlsx</c>
+              <c>https://github.com/Kesavan-Jayakrishnan/tets/raw/master/Financial_Sample.xlsx</c>
               <c>C:\temp\InputFileName1.xlsx</c>
             </r>
           </Data>
@@ -48,7 +47,7 @@
     </Node>
     <Node ToolID="9">
       <GuiSettings Plugin="AlteryxGuiToolkit.Questions.TextBox.QuestionTextBox">
-        <Position x="54" y="54" width="59" height="59" />
+        <Position x="42" y="186" width="59" height="59" />
       </GuiSettings>
       <Properties>
         <Configuration />
@@ -61,7 +60,7 @@
     </Node>
     <Node ToolID="10">
       <GuiSettings Plugin="AlteryxGuiToolkit.Action.Action">
-        <Position x="174" y="54" width="59" height="59" />
+        <Position x="162" y="186" width="59" height="59" />
       </GuiSettings>
       <Properties>
         <Configuration />
@@ -74,7 +73,7 @@
     </Node>
     <Node ToolID="13">
       <GuiSettings Plugin="AlteryxConnectorGui.Download.Download">
-        <Position x="378" y="54" />
+        <Position x="366" y="186" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -123,7 +122,7 @@
     </Node>
     <Node ToolID="14">
       <GuiSettings Plugin="AlteryxBasePluginsGui.DynamicInput.DynamicInput">
-        <Position x="498" y="54" />
+        <Position x="486" y="186" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -146,6 +145,9 @@
           <DefaultAnnotationText />
           <Left value="False" />
         </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
         <MetaInfo connection="Output">
           <RecordInfo>
             <Field name="Segment" size="255" source="File: C:\temp\tets\Financial_Sample.xlsx|||`Sheet1$`" type="V_String" />
@@ -171,7 +173,7 @@
     </Node>
     <Node ToolID="17">
       <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
-        <Position x="690" y="54" />
+        <Position x="678" y="186" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -190,12 +192,15 @@
 Query=Sheet1</DefaultAnnotationText>
           <Left value="False" />
         </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
       </Properties>
       <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
     </Node>
     <Node ToolID="19">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Transpose.Transpose">
-        <Position x="594" y="54" />
+        <Position x="582" y="186" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -352,7 +357,7 @@ column	1</DynamicConfiguration>
               <Description>AzureBlobInputFileUrl_1</Description>
               <Name>Text Box (9)</Name>
               <ToolId value="9" />
-              <Default>https://github.com/Kesavan-Jayakrishnan/alteryx-spike/raw/master/Financial_Sample.xlsx</Default>
+              <Default>https://github.com/Kesavan-Jayakrishnan/tets/raw/master/Financial_Sample.xlsx</Default>
               <Password value="False" />
               <Multiline value="False" />
               <Hidden value="False" />
@@ -363,7 +368,7 @@ column	1</DynamicConfiguration>
       <ModuleType>Wizard</ModuleType>
       <MacroCustomHelp value="False" />
       <MacroDynamicOutputFields value="False" />
-      <MacroImageStd value="0" />
+      <MacroImageStd value="39" />
       <MacroInputs />
       <MacroOutputs />
       <Wiz_CustomHelp value="False" />
