@@ -1,0 +1,385 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2022.1">
+  <Nodes>
+    <Node ToolID="1">
+      <GuiSettings Plugin="AlteryxGuiToolkit.Questions.Tab.Tab">
+        <Position x="0" y="0" width="59" height="59" />
+      </GuiSettings>
+      <Properties>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="8">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
+        <Position x="258" y="186" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <NumRows value="1" />
+          <Fields>
+            <Field name="inputfileUrl1" />
+            <Field name="inputfileName" />
+          </Fields>
+          <Data>
+            <r>
+              <c>https://github.com/Kesavan-Jayakrishnan/tets/raw/master/Financial_Sample.xlsx</c>
+              <c>C:\temp\InputFileName1.xlsx</c>
+            </r>
+          </Data>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="inputfileUrl1" size="2147483647" source="TextInput:" type="V_String" />
+            <Field name="inputfileName" size="2147483647" source="TextInput:" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextInput" />
+    </Node>
+    <Node ToolID="9">
+      <GuiSettings Plugin="AlteryxGuiToolkit.Questions.TextBox.QuestionTextBox">
+        <Position x="42" y="186" width="59" height="59" />
+      </GuiSettings>
+      <Properties>
+        <Configuration />
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Text Box (3)</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="10">
+      <GuiSettings Plugin="AlteryxGuiToolkit.Action.Action">
+        <Position x="162" y="186" width="59" height="59" />
+      </GuiSettings>
+      <Properties>
+        <Configuration />
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Update Cell</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="13">
+      <GuiSettings Plugin="AlteryxConnectorGui.Download.Download">
+        <Position x="366" y="186" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <URLField>inputfileUrl1</URLField>
+          <OutputMode>SpecificFile</OutputMode>
+          <OutputFileNameField>inputfileName</OutputFileNameField>
+          <EncodeURLs value="True" />
+          <Headers>
+            <NameValues />
+            <Fields orderChanged="False">
+              <Field name="inputfileUrl1" selected="False" />
+              <Field name="inputfileName" selected="False" />
+              <Field name="*Unknown" selected="False" />
+            </Fields>
+          </Headers>
+          <Payload>
+            <HTTPAction>GET</HTTPAction>
+            <QueryStringBodyMode>Compose</QueryStringBodyMode>
+            <ComposeNameValues />
+            <ComposeFields orderChanged="False">
+              <Field name="inputfileUrl1" selected="False" />
+              <Field name="inputfileName" selected="False" />
+              <Field name="*Unknown" selected="False" />
+            </ComposeFields>
+          </Payload>
+          <numConnections>2</numConnections>
+          <Timeout>600</Timeout>
+          <EnableRPM value="False" />
+          <Password />
+          <UserName />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="inputfileUrl1" size="2147483647" source="TextInput:" type="V_String" />
+            <Field name="inputfileName" size="2147483647" source="TextInput:" type="V_String" />
+            <Field name="DownloadHeaders" size="2147483647" source="Download" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxConnectorEngine.dll" EngineDllEntryPoint="AlteryxDownload" />
+    </Node>
+    <Node ToolID="14">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DynamicInput.DynamicInput">
+        <Position x="486" y="186" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <InputConfiguration>
+            <Configuration>
+              <Passwords />
+              <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">C:\temp\tets\Financial_Sample.xlsx|||`Sheet1$`</File>
+              <FormatSpecificOptions>
+                <FirstRowData>False</FirstRowData>
+                <ImportLine>1</ImportLine>
+              </FormatSpecificOptions>
+            </Configuration>
+          </InputConfiguration>
+          <Mode>ReadList</Mode>
+          <ReadList_Field>inputfileName</ReadList_Field>
+          <ReadList_Type>Path</ReadList_Type>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Segment" size="255" source="File: C:\temp\tets\Financial_Sample.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Country" size="255" source="File: C:\temp\tets\Financial_Sample.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Product" size="255" source="File: C:\temp\tets\Financial_Sample.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Discount Band" size="255" source="File: C:\temp\tets\Financial_Sample.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Units Sold" source="File: C:\temp\tets\Financial_Sample.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="Manufacturing Price" source="File: C:\temp\tets\Financial_Sample.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="Sale Price" source="File: C:\temp\tets\Financial_Sample.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="Gross Sales" source="File: C:\temp\tets\Financial_Sample.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="Discounts" source="File: C:\temp\tets\Financial_Sample.xlsx|||`Sheet1$`" type="Double" />
+            <Field name=" Sales" source="File: C:\temp\tets\Financial_Sample.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="COGS" source="File: C:\temp\tets\Financial_Sample.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="Profit" source="File: C:\temp\tets\Financial_Sample.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="Date" source="File: C:\temp\tets\Financial_Sample.xlsx|||`Sheet1$`" type="Date" />
+            <Field name="Month Number" source="File: C:\temp\tets\Financial_Sample.xlsx|||`Sheet1$`" type="Double" />
+            <Field name="Month Name" size="255" source="File: C:\temp\tets\Financial_Sample.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Year" size="255" source="File: C:\temp\tets\Financial_Sample.xlsx|||`Sheet1$`" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDynamicInput" />
+    </Node>
+    <Node ToolID="17">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+        <Position x="678" y="186" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <File MaxRecords="" FileFormat="25">C:\temp\tets\output.xlsx|||Sheet1</File>
+          <Passwords />
+          <FormatSpecificOptions>
+            <PreserveFormat>False</PreserveFormat>
+            <SkipFieldNames>False</SkipFieldNames>
+            <OutputOption>Overwrite</OutputOption>
+          </FormatSpecificOptions>
+          <MultiFile value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>output.xlsx
+Query=Sheet1</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+    </Node>
+    <Node ToolID="19">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Transpose.Transpose">
+        <Position x="582" y="186" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <ErrorWarn>Warn</ErrorWarn>
+          <KeyFields>
+            <Field field="Country" />
+            <Field field="Product" />
+          </KeyFields>
+          <DataFields>
+            <Field field="Segment" selected="False" />
+            <Field field="Country" selected="False" />
+            <Field field="Product" selected="False" />
+            <Field field="Discount Band" selected="False" />
+            <Field field="Units Sold" selected="True" />
+            <Field field="Manufacturing Price" selected="False" />
+            <Field field="Sale Price" selected="False" />
+            <Field field="Gross Sales" selected="True" />
+            <Field field="Discounts" selected="False" />
+            <Field field=" Sales" selected="False" />
+            <Field field="COGS" selected="False" />
+            <Field field="Profit" selected="False" />
+            <Field field="Date" selected="False" />
+            <Field field="Month Number" selected="False" />
+            <Field field="Month Name" selected="False" />
+            <Field field="Year" selected="False" />
+            <Field field="*Unknown" selected="False" />
+          </DataFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Country" size="255" source="File: C:\temp\tets\Financial_Sample.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Product" size="255" source="File: C:\temp\tets\Financial_Sample.xlsx|||`Sheet1$`" type="V_String" />
+            <Field name="Name" size="11" source="Transpose:" type="String" />
+            <Field name="Value" source="File: C:\temp\tets\Financial_Sample.xlsx|||`Sheet1$`" type="Double" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTranspose" />
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="8" Connection="Output" />
+      <Destination ToolID="13" Connection="Input" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="9" Connection="Question" />
+      <Destination ToolID="10" Connection="Question" />
+    </Connection>
+    <Connection name="#2">
+      <Origin ToolID="10" Connection="Action" />
+      <Destination ToolID="8" Connection="Action" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="13" Connection="Output" />
+      <Destination ToolID="14" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="14" Connection="Output" />
+      <Destination ToolID="19" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="19" Connection="Output" />
+      <Destination ToolID="17" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <RunWithE2 value="True" />
+    <PredictiveToolsCodePage value="1252" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="False" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <Constants>
+      <Constant>
+        <Namespace>Question</Namespace>
+        <Name>Text Box (9)</Name>
+        <Value />
+        <IsNumeric value="False" />
+      </Constant>
+    </Constants>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>DownloadInputFileFromAzureBlob</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+      <WorkflowId value="91a22a0a-9151-49cb-a5e7-c6b527fc5362" />
+      <Telemetry>
+        <PreviousWorkflowId value="" />
+        <OriginWorkflowId value="91a22a0a-9151-49cb-a5e7-c6b527fc5362" />
+      </Telemetry>
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+    <RuntimeProperties>
+      <Actions>
+        <NoCondition>
+          <Type>NoCondition</Type>
+          <Description>(Always Run)</Description>
+          <True>
+            <Action>
+              <Type>Dynamic</Type>
+              <Description />
+              <ToolId value="10" />
+              <Expression>{{INPUT}}</Expression>
+              <Destination>8/Data/r[1]/c[1]</Destination>
+              <Mapping>Update Cell</Mapping>
+              <Mode>Expression</Mode>
+              <DynamicConfiguration>row	1
+column	1</DynamicConfiguration>
+              <DefaultConfiguration value="True" />
+            </Action>
+          </True>
+        </NoCondition>
+      </Actions>
+      <Questions>
+        <Question>
+          <Type>Tab</Type>
+          <Description>Questions</Description>
+          <Name>Tab (1)</Name>
+          <ToolId value="1" />
+          <Questions>
+            <Question>
+              <Type>TextBox</Type>
+              <Description>AzureBlobInputFileUrl_1</Description>
+              <Name>Text Box (9)</Name>
+              <ToolId value="9" />
+              <Default>https://github.com/Kesavan-Jayakrishnan/tets/raw/master/Financial_Sample.xlsx</Default>
+              <Password value="False" />
+              <Multiline value="False" />
+              <Hidden value="False" />
+            </Question>
+          </Questions>
+        </Question>
+      </Questions>
+      <ModuleType>Wizard</ModuleType>
+      <MacroCustomHelp value="False" />
+      <MacroDynamicOutputFields value="False" />
+      <MacroImageStd value="39" />
+      <MacroInputs />
+      <MacroOutputs />
+      <Wiz_CustomHelp value="False" />
+      <Wiz_CustomGraphic value="False" />
+      <Wiz_ShowOutput value="True" />
+      <Wiz_OpenOutputTools>
+        <Tool ToolId="17" Selected="True" />
+      </Wiz_OpenOutputTools>
+      <Wiz_OutputMessage />
+      <Wiz_NoOutputFilesMessage />
+      <Wiz_ChainRunWizard />
+    </RuntimeProperties>
+  </Properties>
+</AlteryxDocument>
